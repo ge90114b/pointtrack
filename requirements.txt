@@ -1,0 +1,4 @@
+opencv_python==4.9.0.80
+pygame==2.5.2
+torch==2.3.0
+ultralytics==8.2.3
