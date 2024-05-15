@@ -37,7 +37,7 @@ button2 = Button(500, 200, 100, 50, "video")
 
   
 # 加载YOLOv8模型  
-model = YOLO('yolov8x-pose.pt')  # 根据需要更改模型路径  
+model = YOLO('yolov8n-pose.pt')  # 根据需要更改模型路径  
 
 a = 1
 while a==1:
