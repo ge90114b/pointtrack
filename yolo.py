@@ -60,7 +60,9 @@ cap = cv2.VideoCapture(a)
 
 
 first=True
-  
+frame_count = 0  
+fps_clock = pygame.time.Clock() 
+
 # 遍历视频帧  
 while cap.isOpened():  
     success, frame = cap.read()  
@@ -100,6 +102,16 @@ while cap.isOpened():
                     pass
             else:
                 pass
+                # 更新帧计数器  
+        frame_count += 1  
+        fps = fps_clock.get_fps()  # 获取当前帧率  
+          
+        # 在pygame窗口上绘制帧率  
+        fps_text = font.render(f"FPS: {int(fps)}", True, color)  
+        points.blit(fps_text, (points.get_width() - fps_text.get_width() - 5, 5))  # 右上角位置  
+          
+        pygame.display.flip()  # 更新pygame窗口  
+        fps_clock.tick()  # 更新时钟 
         first=False
         pygame.display.flip()
     
