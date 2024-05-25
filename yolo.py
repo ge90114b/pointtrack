@@ -48,8 +48,14 @@ while a==1:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if button1.is_clicked(event.pos):
                 a = 0
+                cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
+                # 设置帧率和分辨率
+                cap.set(cv2.CAP_PROP_FPS, 30)
+                cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+                cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
             elif button2.is_clicked(event.pos):
-                a = video_path
+                a = 0
+                cap = cv2.VideoCapture(video_path) 
 
     points.fill((0, 0, 0))  # 填充背景色
     button1.draw(points)  # 绘制按钮
